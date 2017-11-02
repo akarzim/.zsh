@@ -46,41 +46,39 @@ fi
 # SSH
 if zplug check modules/ssh; then
     # Set the SSH identities to load into the agent.
-    zstyle ':prezto:module:ssh:load' identities 'id_rsa' 'id_rsa2' 'id_github'
+    zstyle ':prezto:module:ssh:load' identities 'id_rsa' 'id_rsa2' 'id_github' 'synbioz'
 fi
 
-# Terminal
-if zplug check modules/terminal; then
-    # zstyle ':prezto:module:terminal' auto-title 'yes'
-    zstyle ':prezto:module:terminal' auto-title 'yes'
+# FZF
+if zplug check junegunn/fzf-bin; then
+  # setting if FZF is available
+  # export FZF_DEFAULT_COMMAND='ag -g ""'
+
+  # --files: List files that would be searched but do not search
+  # --no-ignore: Do not respect .gitignore, etc...
+  # --hidden: Search hidden files and folders
+  # --follow: Follow symlinks
+  # --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
+  export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
+  export FZF_DEFAULT_OPTS='--color=16'
+  # export FZF_DEFAULT_OPTS='
+  #   --color fg:124,bg:16,hl:202,fg+:214,bg+:52,hl+:231
+  #   --color info:52,prompt:196,spinner:208,pointer:196,marker:208
+  # '
+  export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 fi
 
 # Then, source plugins and add commands to $PATH
 # zplug load --verbose
 zplug load
 
-# FZF
-if zplug check junegunn/fzf-bin; then
-    # setting if FZF is available
-    export FZF_DEFAULT_COMMAND='ag -g ""'
-    export FZF_DEFAULT_OPTS='--color=16'
-    # export FZF_DEFAULT_OPTS='
-    #   --color fg:124,bg:16,hl:202,fg+:214,bg+:52,hl+:231
-    #   --color info:52,prompt:196,spinner:208,pointer:196,marker:208
-    # '
-    export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-fi
-
 # Customize to your needs...
 
 # init MacTeX
-eval `/usr/libexec/path_helper -s`
+# eval `/usr/libexec/path_helper -s`
 
 # Load rbenv automatically
-rbenv() {
-    eval "$( command rbenv init - )"
-    rbenv "$@"
-}
+eval "$( command rbenv init - )"
 
 # init PYenv
 pyenv() {
@@ -92,10 +90,12 @@ pyenv() {
 test -f "${HOME}/.homebrew.sh" && source "${HOME}/.homebrew.sh"
 
 # added by travis gem
-test -f "${HOME}/.travis/travis.sh" && source "${HOME}/.travis/travis.sh"
+# test -f "${HOME}/.travis/travis.sh" && source "${HOME}/.travis/travis.sh"
 
 # iTerm2
 test -f "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # Source Tmuxinator
-test -f "${HOME}/.tmuxinator.zsh" && source "${HOME}/.tmuxinator.zsh"
+# test -f "${HOME}/.tmuxinator.zsh" && source "${HOME}/.tmuxinator.zsh"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

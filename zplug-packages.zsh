@@ -1,16 +1,7 @@
 zplug "zplug/zplug"
 
-zplug 'sindresorhus/pure', \
-    hook-build:"
-    {
-      ln -sf $ZPLUG_REPOS/sindresorhus/pure/pure.zsh $HOME/.zfunctions/prompt_pure_setup
-      ln -sf $ZPLUG_REPOS/sindresorhus/pure/async.zsh $HOME/.zfunctions/async
-    } &>/dev/null", \
-    hook-load:"
-    {
-      autoload -U promptinit; promptinit
-      prompt pure
-    } &>/dev/null"
+zplug "mafredri/zsh-async", from:github
+zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
 
 zplug "junegunn/fzf", \
     hook-build:"
@@ -28,25 +19,26 @@ zplug "junegunn/fzf-bin", \
       [ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh
     } &>/dev/null"
 
-zplug "modules/environment", from:prezto
-zplug "modules/terminal", from:prezto
-zplug "modules/editor", from:prezto
-zplug "modules/history", from:prezto
-zplug "modules/directory", from:prezto
-zplug "modules/spectrum", from:prezto
-zplug "modules/utility", from:prezto
-zplug "modules/osx", from:prezto
-zplug "modules/git", from:prezto
-zplug "modules/history-substring-search", from:prezto
 zplug "modules/completion", from:prezto
+zplug "modules/directory", from:prezto
+zplug "modules/docker", from:prezto
+zplug "modules/editor", from:prezto
+zplug "modules/environment", from:prezto
+zplug "modules/git", from:prezto
+zplug "modules/history", from:prezto
+zplug "modules/history-substring-search", from:prezto, defer:2
+zplug "modules/osx", from:prezto
 zplug "modules/rails", from:prezto
+zplug "modules/ssh", from:prezto
+zplug "modules/syntax-highlighting", from:prezto, defer:2
+zplug "modules/utility", from:prezto
 
-zplug "akarzim/zsh-docker-aliases"
-zplug "akarzim/zsh-git-flow-aliases"
-
-zplug "zsh-users/zsh-syntax-highlighting", defer:2
-
-zplug "akarzim/2bd1012f3047585b19cdfad4937895b3", \
-    from:gist, \
+zplug "akarzim/2bd1012f3047585b19cdfad4937895b3", from:gist, \
     on:"sindresorhus/pure", \
     if:"(( $+commands[docker] ))"
+
+zplug "akarzim/7b2f24c7f0dee222b662f35f5bba497a", from:gist, \
+    use:"git-aliases.zsh", \
+    if:"(( $+commands[git] ))"
+
+zplug "rupa/z", use:z.sh, defer:2

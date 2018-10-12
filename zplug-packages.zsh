@@ -46,6 +46,11 @@ zplug "akarzim/57cf090edf53acb082ff44d38fcea259", from:gist, \
     if:"(( $+commands[exa] ))", \
     defer:2
 
+zplug "akarzim/40685dbdbc269115e372e801dee24072", from:gist, \
+    use:"ncdu-aliases.zsh", \
+    if:"(( $+commands[ncdu] ))", \
+    defer:2
+
 zplug "rupa/z", use:z.sh, defer:2
 
 zplug "tmuxinator/tmuxinator", use:"completion/tmuxinator.zsh"

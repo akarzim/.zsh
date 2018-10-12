@@ -42,3 +42,5 @@ zplug "akarzim/7b2f24c7f0dee222b662f35f5bba497a", from:gist, \
     if:"(( $+commands[git] ))"
 
 zplug "rupa/z", use:z.sh, defer:2
+
+zplug "tmuxinator/tmuxinator", use:"completion/tmuxinator.zsh"

@@ -41,6 +41,11 @@ zplug "akarzim/7b2f24c7f0dee222b662f35f5bba497a", from:gist, \
     use:"git-aliases.zsh", \
     if:"(( $+commands[git] ))"
 
+zplug "akarzim/57cf090edf53acb082ff44d38fcea259", from:gist, \
+    use:"exa-aliases.zsh", \
+    if:"(( $+commands[exa] ))", \
+    defer:2
+
 zplug "rupa/z", use:z.sh, defer:2
 
 zplug "tmuxinator/tmuxinator", use:"completion/tmuxinator.zsh"

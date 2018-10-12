@@ -78,7 +78,10 @@ zplug load
 # eval `/usr/libexec/path_helper -s`
 
 # Load rbenv automatically
-eval "$( command rbenv init - )"
+rbenv() {
+  eval "$( command rbenv init - )"
+  rbenv "$@"
+}
 
 # init PYenv
 pyenv() {

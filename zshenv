@@ -16,3 +16,7 @@ fi
 # export PURE_PROMPT_SYMBOL='🐳 '
 # export PURE_PROMPT_SYMBOL='鯨'
 # export PURE_PROMPT_SYMBOL='🅳 ❯'
+
+if [[ -a "${ZDOTDIR:-$HOME}/.zsecrets" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zsecrets"
+fi

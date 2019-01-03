@@ -19,9 +19,12 @@ zplug "junegunn/fzf-bin", \
       [ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh
     } &>/dev/null"
 
+zplug "akarzim/zsh-docker-aliases", from:github, \
+    if:"(( $+commands[docker] ))"
+
 zplug "modules/completion", from:prezto
 zplug "modules/directory", from:prezto
-zplug "modules/docker", from:prezto
+# zplug "modules/docker", from:prezto
 zplug "modules/editor", from:prezto
 zplug "modules/environment", from:prezto
 zplug "modules/git", from:prezto
@@ -35,6 +38,10 @@ zplug "modules/utility", from:prezto
 
 zplug "akarzim/2bd1012f3047585b19cdfad4937895b3", from:gist, \
     on:"sindresorhus/pure", \
+    if:"(( $+commands[docker] ))"
+
+zplug "akarzim/6a0d679ef8e61d728be47bd7f47362de", from:gist, \
+    use:"zsh-docker-bang-aliases.zsh", \
     if:"(( $+commands[docker] ))"
 
 zplug "akarzim/7b2f24c7f0dee222b662f35f5bba497a", from:gist, \

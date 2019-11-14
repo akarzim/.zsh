@@ -5,21 +5,17 @@
 # zmodload zsh/zprof
 
 # Install zplug if not exists
-[[ -d ~/.zplug ]] || {
-  curl -fLo ~/.zplug/zplug --create-dirs git.io/zplug
-  source ~/.zplug/init.sh
-  zplug update --self
-}
+if [[ ! -d ~/.zplug ]]; then
+  curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
+fi
 
 # Source zplug
 source ~/.zplug/init.zsh
 
-# Install plugins if there are plugins that have not been installed
-if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    fi
+# zplug check returns true if all packages are installed
+# Therefore, when it returns false, run zplug install
+if ! zplug check; then
+    zplug install
 fi
 
 if zplug check sorin-ionescu/prezto; then

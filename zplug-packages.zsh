@@ -51,6 +51,16 @@ zplug "akarzim/7b2f24c7f0dee222b662f35f5bba497a", from:gist, \
     use:"git-aliases.zsh", \
     if:"(( $+commands[git] ))"
 
+zplug "akarzim/37968ac711fc49d4ef38cdaba4997b8f", from:gist, \
+    use:"ruby-aliases.zsh", \
+    if:"(( $+commands[ruby] ))"
+
+zplug "akarzim/c279facda5850c656b44acea71397650", from:gist, \
+    use:"readme-aliases.zsh"
+
+zplug "akarzim/e77af454042a447812f7fd765fd32007", from:gist, \
+    use:"orig-aliases.zsh"
+
 zplug "akarzim/57cf090edf53acb082ff44d38fcea259", from:gist, \
     use:"exa-aliases.zsh", \
     if:"(( $+commands[exa] ))", \

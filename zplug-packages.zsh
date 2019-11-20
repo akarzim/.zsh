@@ -22,6 +22,9 @@ zplug "junegunn/fzf-bin", \
 zplug "akarzim/zsh-docker-aliases", from:github, \
     if:"(( $+commands[docker] ))"
 
+zplug "akarzim/zsh-plungy-aliases", from:github, \
+    if:"(( $+commands[docker] ))"
+
 zplug "modules/completion", from:prezto
 zplug "modules/directory", from:prezto
 # zplug "modules/docker", from:prezto

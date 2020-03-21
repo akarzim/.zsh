@@ -5,45 +5,18 @@
 # zmodload zsh/zprof
 
 # Install zplug if not exists
-if [[ ! -d ~/.zplug ]]; then
-  curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
-fi
+# if [[ ! -d ~/.zplug ]]; then
+#   curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
+# fi
 
 # Source zplug
 source ~/.zplug/init.zsh
 
 # zplug check returns true if all packages are installed
 # Therefore, when it returns false, run zplug install
-if ! zplug check; then
-    zplug install
-fi
-
-if zplug check sorin-ionescu/prezto; then
-    # Color output (auto set to 'no' on dumb terminals).
-    zstyle ':prezto:*:*' color 'yes'
-fi
-
-# Editor
-if zplug check modules/editor; then
-    # Set the key mapping style to 'emacs' or 'vi'.
-    zstyle ':prezto:module:editor' key-bindings 'vi'
-    # Auto convert .... to ../..
-    zstyle ':prezto:module:editor' dot-expansion 'yes'
-fi
-
-# Git
-if zplug check modules/git; then
-    # Ignore submodules when they are 'dirty', 'untracked', 'all', or 'none'.
-    zstyle ':prezto:module:git:status:ignore' submodules 'all'
-    # Set the format of the git-log output to 'brief', 'oneline', or 'medium'.
-    zstyle ':prezto:module:git:log:context' format 'oneline'
-fi
-
-# SSH
-if zplug check modules/ssh; then
-    # Set the SSH identities to load into the agent.
-    zstyle ':prezto:module:ssh:load' identities 'id_rsa' 'id_rsa2' 'id_github' 'synbioz'
-fi
+# if ! zplug check; then
+#     zplug install
+# fi
 
 # FZF
 if zplug check junegunn/fzf-bin; then
@@ -64,20 +37,17 @@ if zplug check junegunn/fzf-bin; then
   export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 fi
 
+# Customize to your needs...
+zstyle ':akarzim:*:*' color 'yes'
+zstyle ':akarzim:module:git:log:context' format 'oneline'
+zstyle ':akarzim:module:ssh:load' identities 'id_rsa' 'id_rsa2' 'id_github' 'synbioz'
+
 # Then, source plugins and add commands to $PATH
 # zplug load --verbose
 zplug load
 
-# Customize to your needs...
-
 # init MacTeX
 # eval `/usr/libexec/path_helper -s`
-
-# Load rbenv automatically
-rbenv() {
-  eval "$( command rbenv init - )"
-  rbenv "$@"
-}
 
 # init PYenv
 pyenv() {
@@ -100,9 +70,11 @@ test -f "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Load nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Added by plungy
  fpath=(~/.plungy/autocomplete $fpath)
+
+# zprof

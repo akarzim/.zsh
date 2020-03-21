@@ -19,7 +19,7 @@ zplug "junegunn/fzf-bin", \
       [ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh
     } &>/dev/null"
 
-zplug "~/.zsh", use:init.zsh, from:local
+zplug "akarzim/.zsh", use:init.zsh, from:github
 
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 # This module must be loaded after the syntax-highlighting module

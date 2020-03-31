@@ -116,6 +116,11 @@ alias gfp="git fetch --prune && git branch -r | awk '{print \$1}' | egrep -v -f 
 alias gfP="git fetch --prune && git branch -r | awk '{print \$1}' | egrep -v -f /dev/fd/0 <(git branch -vv | grep origin) | awk '{print \$1}' | xargs git branch -D"
 # Source : http://stackoverflow.com/questions/13064613/how-to-prune-local-tracking-branches-that-do-not-exist-on-remote-anymore#17029936
 
+# Clones a git repository and changes to it.
+function gfcd {
+  git clone "$@" && builtin cd "${_:t:r}"
+}
+
 # Flow (F)
 alias gFi='git flow init'
 alias gFf='git flow feature'

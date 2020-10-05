@@ -21,5 +21,3 @@ source "${0:h}/.zsh/modules/spectrum.zsh"
 source "${0:h}/.zsh/modules/utility.zsh"
 source "${0:h}/.zsh/modules/completion.zsh"
 source "${0:h}/.zsh/modules/nvm.zsh"
-
-source "${0:h}/.zsh/modules/source.zsh"

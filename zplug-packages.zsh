@@ -32,5 +32,3 @@ zplug "akarzim/zsh-docker-aliases", from:github, \
 
 zplug "akarzim/zsh-plungy-aliases", from:github, \
     use:"alias.zsh"
-
-zplug "rupa/z", use:z.sh, defer:2

@@ -74,6 +74,11 @@ if (( $+commands[zoxide] )); then
   eval "$(zoxide init zsh)"
 fi
 
+# starship prompt
+if (( $+commands[starship] )); then
+  eval "$(starship init zsh)"
+fi
+
 # Added by plungy
  fpath=(~/.plungy/autocomplete $fpath)
 

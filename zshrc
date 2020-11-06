@@ -79,7 +79,10 @@ if (( $+commands[starship] )); then
   eval "$(starship init zsh)"
 fi
 
+# Java Developer Kit
+test -d "/usr/local/opt/openjdk/bin" && export PATH="/usr/local/opt/openjdk/bin:$PATH"
+
 # Added by plungy
- fpath=(~/.plungy/autocomplete $fpath)
+fpath=(~/.plungy/autocomplete $fpath)
 
 # zprof

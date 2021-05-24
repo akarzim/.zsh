@@ -138,17 +138,20 @@ fi
 
 # Edit README.md in Vim
 if (( $+commands[vi] )); then
-  alias vir='vi README.md'
-  alias vic='vi CHANGELOG.md'
+  alias vir="vi README.md"
+  alias vic="vi CHANGELOG.md"
+  alias vig="vi Gemfile"
 fi
 
 # Show README.md in terminal
 if (( $+commands[bat] )); then
   alias catr='bat README.md'
   alias catc='bat CHANGELOG.md'
+  alias catg='bat Gemfile'
 else
   alias catr='cat README.md'
   alias catc='cat CHANGELOG.md'
+  alias catg='cat Gemfile'
 fi
 
 # Open README.md in app

@@ -35,6 +35,23 @@ function git-branch-current {
   fi
 }
 
+# Display the current Git top level directory.
+function git-show-toplevel {
+  if ! command git rev-parse 2> /dev/null; then
+    print "$0: not a repository: $PWD" >&2
+    return 1
+  fi
+
+  local toplevel="$(command git rev-parse --show-toplevel 2> /dev/null)"
+
+  if [[ -n "$toplevel" ]]; then
+    print "$toplevel"
+    return 0
+  else
+    return 1
+  fi
+}
+
 #
 # Aliases
 #

@@ -44,6 +44,10 @@ if [[ -z "$LANG" ]]; then
   export LANG='fr_FR.UTF-8'
 fi
 
+if [[ -z "$LC_COLLATE" ]]; then
+  export LC_COLLATE='fr_FR'
+fi
+
 #
 # Paths
 #

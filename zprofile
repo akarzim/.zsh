@@ -92,3 +92,11 @@ if [[ ! -d "$TMPDIR" ]]; then
 fi
 
 TMPPREFIX="${TMPDIR%/}/zsh"
+
+#
+# Dotfiles
+#
+if [[ -z "$AGEKEY" ]]; then
+  export AGEKEY="$HOME/Documents/keys/age-key.txt"
+  export AGEPUBKEY=$(awk '/public key/ {print $4}' $AGEKEY)
+fi

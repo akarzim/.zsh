@@ -141,6 +141,7 @@ if (( $+commands[vi] )); then
   alias vir="vi README.md"
   alias vic="vi CHANGELOG.md"
   alias vig="vi Gemfile"
+  alias vid="vi config/database.yml"
 fi
 
 # Show README.md in terminal
@@ -148,10 +149,12 @@ if (( $+commands[bat] )); then
   alias catr='bat README.md'
   alias catc='bat CHANGELOG.md'
   alias catg='bat Gemfile'
+  alias catd='bat config/database.yml'
 else
   alias catr='cat README.md'
   alias catc='cat CHANGELOG.md'
   alias catg='cat Gemfile'
+  alias catd='cat config/database.yml'
 fi
 
 # Open README.md in app

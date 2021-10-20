@@ -82,6 +82,11 @@ fi
 # Java Developer Kit
 test -d "/usr/local/opt/openjdk/bin" && export PATH="/usr/local/opt/openjdk/bin:$PATH"
 
+# Needed for a proper GnuPG agent forwarding
+if (( $+commands[gpgconf] )); then
+  gpgconf --create-socketdir
+fi
+
 # Added by plungy
 fpath=(~/.plungy/autocomplete $fpath)
 

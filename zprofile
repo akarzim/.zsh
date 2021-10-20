@@ -96,7 +96,17 @@ TMPPREFIX="${TMPDIR%/}/zsh"
 #
 # Dotfiles
 #
-if [[ -z "$AGEKEY" ]]; then
-  export AGEKEY="$HOME/Documents/keys/age-key.txt"
-  export AGEPUBKEY=$(awk '/public key/ {print $4}' $AGEKEY)
+if (( $+commands[age] )); then
+  if [[ -z "$AGEKEY" ]]; then
+    export AGEKEY="$HOME/keys/age-key.txt"
+
+    if [[ ! -f "$AGEKEY" ]]; then
+      if [[ ! -d "${AGEKEY:h}" ]]; then
+        mkdir -p -m 700 "${AGEKEY:h}"
+      fi
+      age-keygen --output $AGEKEY
+    fi
+
+    export AGEPUBKEY=$(awk '/public key/ {print $4}' $AGEKEY)
+  fi
 fi

@@ -84,7 +84,7 @@ test -d "/usr/local/opt/openjdk/bin" && export PATH="/usr/local/opt/openjdk/bin:
 
 # Needed for a proper GnuPG agent forwarding
 if (( $+commands[gpgconf] )); then
-  gpgconf --create-socketdir
+  test -d "/run/user" && gpgconf --create-socketdir
 fi
 
 # Added by plungy

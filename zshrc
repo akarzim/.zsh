@@ -82,6 +82,13 @@ fi
 # Java Developer Kit
 test -d "/usr/local/opt/openjdk/bin" && export PATH="/usr/local/opt/openjdk/bin:$PATH"
 
+# adfs
+if [[ -f "${HOME}/.asdf/asdf.sh" ]]; then
+  source "${HOME}/.asdf/asdf.sh"
+  # append completions to fpath
+  fpath=(${ASDF_DIR}/completions $fpath)
+fi
+
 # Needed for a proper GnuPG agent forwarding
 if (( $+commands[gpgconf] )); then
   test -d "/run/user" && gpgconf --create-socketdir

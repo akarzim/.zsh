@@ -28,6 +28,3 @@ zplug "zsh-users/zsh-completions", use:src
 
 zplug "akarzim/zsh-docker-aliases", from:github, \
     if:"(( $+commands[docker] ))"
-
-zplug "akarzim/zsh-plungy-aliases", from:github, \
-    use:"alias.zsh"

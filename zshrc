@@ -94,7 +94,4 @@ if (( $+commands[gpgconf] )); then
   test -d "/run/user" && gpgconf --create-socketdir
 fi
 
-# Added by plungy
-fpath=(~/.plungy/autocomplete $fpath)
-
 # zprof

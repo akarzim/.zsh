@@ -165,6 +165,9 @@ fi
 # Calendar
 alias wcal='ncal -w | sed -E "2,8s/ $(date +%e)/$(tput setaf 12)&$(tput sgr0)/"'
 
+# Youtube-dl
+alias yt='yt-dlp'
+
 # Miscellaneous
 
 # Serves a directory via HTTP.

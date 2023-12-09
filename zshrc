@@ -55,9 +55,6 @@ pyenv() {
     pyenv "$@"
 }
 
-# added by travis gem
-# test -f "${HOME}/.travis/travis.sh" && source "${HOME}/.travis/travis.sh"
-
 # iTerm2
 test -f "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 

@@ -135,7 +135,6 @@ else
   alias du='du -kh'
 fi
 
-
 # Edit README.md in Vim
 if (( $+commands[vi] )); then
   alias vir="vi README.md"
@@ -162,6 +161,9 @@ if (( $+commands[open] )); then
   alias or='open README.md'
   alias oc='open CHANGELOG.md'
 fi
+
+# Calendar
+alias wcal='ncal -w | sed -E "2,8s/ $(date +%e)/$(tput setaf 12)&$(tput sgr0)/"'
 
 # Miscellaneous
 

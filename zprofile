@@ -30,11 +30,6 @@ export EDITOR=`which nvim`
 export VISUAL=`which nvim`
 export PAGER=`which less`
 
-#
-# Calendar
-#
-
-alias wcal='ncal -w | sed -E "2,8s/ $(date +%e)/$(tput setaf 12)&$(tput sgr0)/"'
 
 #
 # Language

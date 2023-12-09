@@ -40,7 +40,7 @@ fi
 # Customize to your needs...
 zstyle ':akarzim:*:*' color 'yes'
 zstyle ':akarzim:module:git:log:context' format 'oneline'
-zstyle ':akarzim:module:ssh:load' identities 'id_rsa' 'id_rsa2' 'id_github' 'synbioz'
+zstyle ':akarzim:module:ssh:load' identities 'id_rsa' 'id_rsa2' 'id_github' 'id_ed25519'
 
 # Then, source plugins and add commands to $PATH
 # zplug load --verbose

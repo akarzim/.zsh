@@ -59,7 +59,7 @@ pyenv() {
 test -f "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 # Source Tmuxinator
-# test -f "${HOME}/.tmuxinator.zsh" && source "${HOME}/.tmuxinator.zsh"
+test -f "${HOME}/.tmuxinator.zsh" && source "${HOME}/.tmuxinator.zsh"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 

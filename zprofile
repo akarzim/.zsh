@@ -30,6 +30,7 @@ export EDITOR=`which nvim`
 export VISUAL=`which nvim`
 export PAGER=`which less`
 
+export NVIM_LISTEN_ADDRESS='/tmp/nvimsocket'
 
 #
 # Language

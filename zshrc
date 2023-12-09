@@ -55,9 +55,6 @@ pyenv() {
     pyenv "$@"
 }
 
-# HomeBrew
-test -f "${HOME}/.homebrew.sh" && source "${HOME}/.homebrew.sh"
-
 # added by travis gem
 # test -f "${HOME}/.travis/travis.sh" && source "${HOME}/.travis/travis.sh"
 

@@ -76,9 +76,10 @@ fi
 # Java Developer Kit
 test -d "/usr/local/opt/openjdk/bin" && export PATH="/usr/local/opt/openjdk/bin:$PATH"
 
-# adfs
-if [[ -f "${HOME}/.asdf/asdf.sh" ]]; then
-  source "${HOME}/.asdf/asdf.sh"
+# asdf
+if [[ -f "/usr/local/lib/asdf.sh" ]]; then
+  source "/usr/local/lib/asdf.sh"
+  path=(${HOME}/.asdf/shims $path)
   # append completions to fpath
   fpath=(${ASDF_DIR}/completions $fpath)
 fi

@@ -10,7 +10,7 @@
 # fi
 
 # Source zplug
-source ~/.zplug/init.zsh
+source /usr/share/zplug/init.zsh
 
 # zplug check returns true if all packages are installed
 # Therefore, when it returns false, run zplug install

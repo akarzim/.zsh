@@ -58,6 +58,7 @@ pyenv() {
 # Source Tmuxinator
 test -f "${HOME}/.tmuxinator.zsh" && source "${HOME}/.tmuxinator.zsh"
 
+# FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # zoxide

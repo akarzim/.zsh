@@ -162,6 +162,9 @@ if (( $+commands[open] )); then
   alias oc='open CHANGELOG.md'
 fi
 
+# Tmux
+alias mux='tmuxinator'
+
 # Calendar
 alias wcal='ncal -w | sed -E "2,8s/ $(date +%e)/$(tput setaf 12)&$(tput sgr0)/"'
 

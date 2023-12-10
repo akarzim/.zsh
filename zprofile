@@ -36,8 +36,16 @@ export NVIM_LISTEN_ADDRESS='/tmp/nvimsocket'
 # Language
 #
 
+if [[ -z "$LANGUAGE" ]]; then
+  export LANGUAGE='fr:en'
+fi
+
 if [[ -z "$LANG" ]]; then
   export LANG='fr_FR.UTF-8'
+fi
+
+if [[ -z "$LC_ALL" ]]; then
+  export LC_ALL='fr_FR.UTF-8'
 fi
 
 if [[ -z "$LC_COLLATE" ]]; then

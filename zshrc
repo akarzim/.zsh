@@ -84,6 +84,11 @@ if [[ -f "/usr/local/lib/asdf.sh" ]]; then
   fpath=(${ASDF_DIR}/completions $fpath)
 fi
 
+# rbenv
+if [[ -f "${HOME}/.rbenv/bin/rbenv" ]]; then
+  eval "$(~/.rbenv/bin/rbenv init - zsh)"
+fi
+
 # Needed for a proper GnuPG agent forwarding
 if (( $+commands[gpgconf] )); then
   test -d "/run/user" && gpgconf --create-socketdir

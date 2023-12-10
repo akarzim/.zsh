@@ -19,6 +19,8 @@ fi
 
 if [[ "$OSTYPE" == darwin* ]]; then
   export BROWSER='open'
+else
+  export BROWSER=`which firefox`
 fi
 
 #

@@ -94,4 +94,9 @@ if (( $+commands[gpgconf] )); then
   test -d "/run/user" && gpgconf --create-socketdir
 fi
 
+# Scalingo
+if [[ -f "${HOME}/.zsh/completion/scalingo_complete.zsh" ]]; then
+  source ~/.zsh/completion/scalingo_complete.zsh
+fi
+
 # zprof

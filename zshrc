@@ -102,4 +102,7 @@ if [[ -f "${HOME}/.zsh/completion/scalingo_complete.zsh" ]]; then
   source ~/.zsh/completion/scalingo_complete.zsh
 fi
 
+# Modular ZSH
+test -f "${ZDOTDIR:-$HOME}/.zsh/init.zsh" && source "${ZDOTDIR:-$HOME}/.zsh/init.zsh"
+
 # zprof

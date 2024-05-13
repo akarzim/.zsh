@@ -1,0 +1,4 @@
+# Calculate mathematical expression
+function calc {
+  [[ "$*" =~ "--expression|-e" ]] && dc "$@" || dc -e "$* p"
+}

@@ -72,6 +72,7 @@ fpath=(
   "$HOME/.zfunctions"
   $fpath
 )
+autoload mkdcd cdls calc
 
 #
 # Less

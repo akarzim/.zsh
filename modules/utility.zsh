@@ -179,17 +179,3 @@ if (( $+commands[python3] )); then
 else
   alias http-serve='python -m SimpleHTTPServer'
 fi
-
-#
-# Functions
-#
-
-# Makes a directory and changes to it.
-function mkdcd {
-  [[ -n "$1" ]] && mkdir -p "$1" && builtin cd "$1"
-}
-
-# Changes to a directory and lists its contents.
-function cdls {
-  builtin cd "$argv[-1]" && ls "${(@)argv[1,-2]}"
-}

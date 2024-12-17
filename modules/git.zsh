@@ -35,21 +35,21 @@ function git-branch-current {
   fi
 }
 
-# Display the current Git top level directory.
-function git-show-toplevel {
-  if ! command git rev-parse 2> /dev/null; then
-    print "$0: not a repository: $PWD" >&2
+# Lists lost Git commits.
+function git-commit-lost {
+  if ! $(command git rev-parse --is-inside-work-tree) 2> /dev/null; then
+    print "$0: not a repository work tree: $PWD" >&2
     return 1
   fi
 
-  local toplevel="$(command git rev-parse --show-toplevel 2> /dev/null)"
-
-  if [[ -n "$toplevel" ]]; then
-    print "$toplevel"
-    return 0
-  else
-    return 1
-  fi
+  command git fsck 2> /dev/null \
+    | grep "\(dangling commit\|commit fantôme\)" \
+    | awk '{print $4}' \
+    | command git log \
+        --date-order \
+        --no-walk \
+        --stdin \
+        --pretty=format:${_git_log_oneline_format}
 }
 
 #

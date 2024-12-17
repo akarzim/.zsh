@@ -234,9 +234,11 @@ alias glS='git log --show-signature'
 
 # Merge (m)
 alias gm='git merge'
+alias gma='git merge --abort'
+alias gmc='git merge --continue'
 alias gmC='git merge --no-commit'
 alias gmF='git merge --no-ff'
-alias gma='git merge --abort'
+alias gms='git merge --skip'
 alias gmt='git mergetool'
 
 # Push (p)
@@ -300,14 +302,15 @@ alias gts='git tag -s'
 alias gtv='git verify-tag'
 
 # Working Copy (w)
-alias gws='git status --ignore-submodules=all --short'
-alias gwS='git status --ignore-submodules=all'
+alias gwc='git clean -n'
+alias gwC='git clean -f'
 alias gwd='git diff --no-ext-diff'
 alias gwD='git diff --no-ext-diff --word-diff'
 alias gwr='git reset --soft'
 alias gwR='git reset --hard'
-alias gwc='git clean -n'
-alias gwC='git clean -f'
+alias gws='git status --ignore-submodules=all --short'
+alias gwS='git status --ignore-submodules=all'
+alias gwt='git rev-parse --show-toplevel'
 alias gwx='git rm -r'
 alias gwX='git rm -rf'
 
